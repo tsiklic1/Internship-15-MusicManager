@@ -16,7 +16,7 @@ const GenreDropdown = (props) =>{
   }
 
   return (
-    <div>
+    <div className="dropdown-wrapper">
       <button className="genre-button dropdown-button" onClick={()=>setIsOpen((prev) => !prev)}>Dropdown (genre)</button>
       {isOpen && <form className="dropdown-container" onSubmit={handleSubmit}>
           {genres.map((item) => (

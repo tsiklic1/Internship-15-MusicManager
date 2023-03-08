@@ -3,7 +3,6 @@ import {albums, genres} from "../lists";
 import GenreDropdown from "./GenreDropdown";
 
 const Form = ({handleAddAlbum})=>{
-
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("")
   const [genre, setGenre] = useState("")
@@ -49,7 +48,7 @@ const Form = ({handleAddAlbum})=>{
     
      <button onClick={(e) => handleSubmit(e)}>Add</button>
      <p style={{color: emptyFieldExists ? "red" : "transparent"}}>No field can be empty</p>
-     values to be submitted {title}, {author},{year}
+     <p>values to be submitted <br/> title: {title} <br/> author: {author} <br/> year: {year} <br/> genre: {genre}</p>
     </div>);
 }
 

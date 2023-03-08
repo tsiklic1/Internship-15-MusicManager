@@ -19,6 +19,7 @@ code {
 .album-input-form {
   margin-left: 30px;
   margin-top: 40px;
+  margin-bottom: 100px;
   width: 200px;
 }
 
@@ -39,12 +40,18 @@ code {
   width: 100%;
 }
 
+.dropdown-wrapper {
+  position: relative;
+}
+
 .dropdown-button {
   width: 100%;
 }
 
 .dropdown-container {
-  width: 100%;
+  width: 100px;
+  position: absolute;
+  transform: translate(210px, -28px);
 }
 
 .album-added-today {
