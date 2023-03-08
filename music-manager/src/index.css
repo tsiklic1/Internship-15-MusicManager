@@ -46,3 +46,7 @@ code {
 .dropdown-container {
   width: 100%;
 }
+
+.album-added-today {
+  border: green solid 2px;
+}
