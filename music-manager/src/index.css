@@ -2,6 +2,14 @@
   box-sizing: border-box;
 }
 
+:root {
+  --blue: #043373;
+  --purple: #756c8f;
+  --pink: #dc869d;
+  --magenta: #ae7f9c;
+  --red: #5c2c34;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -9,11 +17,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  background-color: var(--purple);
 }
 
 .album-input-form {
@@ -23,20 +27,41 @@ code {
   width: 200px;
 }
 
+.album-input-form__title {
+  font-size: 30px;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
 .album-info-input {
   display: block;
   margin-bottom: 5px;
   width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  color: white;
+  background-color: var(--magenta);
 }
 
 .genre-button {
-  background-color: antiquewhite;
+  background-color: var(--blue);
   border: none;
   margin-right: 5px;
-  border-radius: 3px;
-  padding: 5px;
+  border-radius: 8px;
+  padding: 10px;
   margin-bottom: 2px;
   display: block;
+  width: 80px;
+  color: white;
+}
+
+.dropdown-button {
+  background-color: var(--magenta);
+  padding: 8px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
   width: 100%;
 }
 
@@ -44,16 +69,33 @@ code {
   position: relative;
 }
 
-.dropdown-button {
-  width: 100%;
-}
-
 .dropdown-container {
   width: 100px;
   position: absolute;
-  transform: translate(210px, -28px);
+  transform: translate(210px, -32px);
+}
+
+.album-input-form__add-button {
+  background-color: var(--pink);
+  width: 80px;
+  padding: 12px;
+  border-radius: 12px;
 }
 
 .album-added-today {
-  border: green solid 2px;
+  border: var(--blue) solid 2px;
+}
+
+.album-display-wrapper {
+  width: 800px;
+  margin-left: 30px;
+}
+
+.album-container {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #dc869d99;
+  margin-bottom: 12px;
+  padding: 0 30px;
 }

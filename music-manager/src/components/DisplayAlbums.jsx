@@ -23,10 +23,10 @@ const DisplayAlbums = ({albumsList}) => {
   let today = new Date()
 
   return (
-    <div>
+    <div className = "album-display-wrapper">
       {albumsList.map((album)=> {
-      return <p className={(album.addDate.getMonth() === today.getMonth() && album.addDate.getDay() === today.getDay() && album.addDate.getFullYear() === today.getFullYear()) ? "album-added-today" : ""} 
-      key = {album.id}> {JSON.stringify(album)}</p>})}
+      return <div className={(album.addDate.getMonth() === today.getMonth() && album.addDate.getDay() === today.getDay() && album.addDate.getFullYear() === today.getFullYear()) ? "album-container album-added-today" : "album-container"}> 
+      <p key = {album.id}> {JSON.stringify(album)}</p><button className="">Remove</button> </div>})}
     </div>
   )
 }

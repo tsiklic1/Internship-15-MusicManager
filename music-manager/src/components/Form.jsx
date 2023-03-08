@@ -40,13 +40,13 @@ const Form = ({handleAddAlbum})=>{
   }
 
   return (<div className="album-input-form"  id = "inputForm" >
-    <p>Album info</p>
+    <p className="album-input-form__title">New album</p>
     <input className="album-info-input" type="text " placeholder="Title" value ={title} onChange = {e => setTitle(e.target.value)} />
     <input className="album-info-input" type="text " placeholder="Author" value ={author} onChange = {e => setAuthor(e.target.value)} />
     <input className="album-info-input" type="text " placeholder="Year" value ={year} onChange = {e => handleChangeOnYear(e.target.value)} />
     <GenreDropdown onSubmit = {getData}/>
     
-     <button onClick={(e) => handleSubmit(e)}>Add</button>
+     <button className="album-input-form__add-button" onClick={(e) => handleSubmit(e)}>Add</button>
      <p style={{color: emptyFieldExists ? "red" : "transparent"}}>No field can be empty</p>
      <p>values to be submitted <br/> title: {title} <br/> author: {author} <br/> year: {year} <br/> genre: {genre}</p>
     </div>);
