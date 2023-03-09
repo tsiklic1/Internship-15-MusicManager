@@ -38,10 +38,10 @@ const DisplayAlbums = ({albumsList, setAlbums}) => {
 
   return (
     <div className = "album-display-wrapper">
-      <FilterSection changeTitleFilter = {filter => setTitleFilter(filter)}/>
+      <FilterSection changeTitleFilter = {filter => setTitleFilter(filter)} changeGenreFilter = {filter => setGenreFilter(filter)}/>
 
       {albumsList.map((album)=> {
-        if(album.title.toLowerCase().includes(titleFilter)){
+        if(album.title.toLowerCase().includes(titleFilter) && album.genre.includes(genreFilter)){
           return <div key={album.id} className={(album.addDate.getMonth() === today.getMonth() && album.addDate.getDay() === today.getDay() && album.addDate.getFullYear() === today.getFullYear()) ? "album-container album-added-today" : "album-container"}> 
       <div key = {album.id}> 
         <h3 key={`title${album.id}`} className="album-container__text">{album.title}</h3>

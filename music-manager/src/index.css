@@ -113,3 +113,7 @@ body {
   border-radius: 8px;
   border: none;
 }
+
+.filter-input {
+  display: block;
+}

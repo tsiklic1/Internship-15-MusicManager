@@ -19,7 +19,7 @@ export const albums = [
     id: 2,
     title: "Kokolo",
     author: "Magazin",
-    genre: "pop",
+    genre: "Pop",
     year: 1990,
     addDate: new Date(),
   },
