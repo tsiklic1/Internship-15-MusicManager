@@ -1,4 +1,11 @@
+import FilterSection from "./FilterSection";
+import { useState } from "react"
+
+
 const DisplayAlbums = ({albumsList, setAlbums}) => {
+  const [titleFilter, setTitleFilter] = useState("")
+  const [genreFilter, setGenreFilter] = useState("")
+
   console.log(albumsList)
   albumsList.sort((a,b) => {
     let y1 = a.year;
@@ -31,15 +38,18 @@ const DisplayAlbums = ({albumsList, setAlbums}) => {
 
   return (
     <div className = "album-display-wrapper">
+      <FilterSection changeTitleFilter = {filter => setTitleFilter(filter)}/>
+
       {albumsList.map((album)=> {
-      return <div key={album.id} className={(album.addDate.getMonth() === today.getMonth() && album.addDate.getDay() === today.getDay() && album.addDate.getFullYear() === today.getFullYear()) ? "album-container album-added-today" : "album-container"}> 
+        if(album.title.toLowerCase().includes(titleFilter)){
+          return <div key={album.id} className={(album.addDate.getMonth() === today.getMonth() && album.addDate.getDay() === today.getDay() && album.addDate.getFullYear() === today.getFullYear()) ? "album-container album-added-today" : "album-container"}> 
       <div key = {album.id}> 
         <h3 key={`title${album.id}`} className="album-container__text">{album.title}</h3>
         <p key={`author${album.id}`}  className="album-container__text">{album.author}</p> 
         <p key={`year${album.id}`}  className="album-container__text">{album.genre}</p> <p className="album-container__text">{album.year}</p>
       </div>
         <button key={`remove${album.id}`}  onClick={() => handleRemove(album.id)} className="remove-album-button">Remove</button>
-     </div>})}
+     </div>}})}
     </div>
   )
 }

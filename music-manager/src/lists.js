@@ -19,7 +19,7 @@ export const albums = [
     id: 2,
     title: "Kokolo",
     author: "Magazin",
-    genre: "pitaj boga",
+    genre: "pop",
     year: 1990,
     addDate: new Date(),
   },
