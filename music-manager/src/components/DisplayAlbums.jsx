@@ -1,4 +1,5 @@
-const DisplayAlbums = ({albumsList}) => {
+const DisplayAlbums = ({albumsList, setAlbums}) => {
+  console.log(albumsList)
   albumsList.sort((a,b) => {
     let y1 = a.year;
     let y2 = b.year;
@@ -22,11 +23,23 @@ const DisplayAlbums = ({albumsList}) => {
 
   let today = new Date()
 
+  const handleRemove = (albumIdToRemove) => {
+    setAlbums((current) => 
+      current.filter((album) => album.id !== albumIdToRemove)
+    )
+  }
+
   return (
     <div className = "album-display-wrapper">
       {albumsList.map((album)=> {
-      return <div className={(album.addDate.getMonth() === today.getMonth() && album.addDate.getDay() === today.getDay() && album.addDate.getFullYear() === today.getFullYear()) ? "album-container album-added-today" : "album-container"}> 
-      <p key = {album.id}> {JSON.stringify(album)}</p><button className="">Remove</button> </div>})}
+      return <div key={album.id} className={(album.addDate.getMonth() === today.getMonth() && album.addDate.getDay() === today.getDay() && album.addDate.getFullYear() === today.getFullYear()) ? "album-container album-added-today" : "album-container"}> 
+      <div key = {album.id}> 
+        <h3 key={`title${album.id}`} className="album-container__text">{album.title}</h3>
+        <p key={`author${album.id}`}  className="album-container__text">{album.author}</p> 
+        <p key={`year${album.id}`}  className="album-container__text">{album.genre}</p> <p className="album-container__text">{album.year}</p>
+      </div>
+        <button key={`remove${album.id}`}  onClick={() => handleRemove(album.id)} className="remove-album-button">Remove</button>
+     </div>})}
     </div>
   )
 }

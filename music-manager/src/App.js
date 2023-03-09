@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <Form handleAddAlbum={handleAddAlbum}></Form>
-      <DisplayAlbums albumsList={albumsList} />
+      <DisplayAlbums albumsList={albumsList} setAlbums={setAlbums} />
     </div>
   );
 }

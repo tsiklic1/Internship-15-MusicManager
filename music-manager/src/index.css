@@ -87,7 +87,7 @@ body {
 }
 
 .album-display-wrapper {
-  width: 800px;
+  width: 500px;
   margin-left: 30px;
 }
 
@@ -97,5 +97,19 @@ body {
   border-radius: 10px;
   background-color: #dc869d99;
   margin-bottom: 12px;
-  padding: 0 30px;
+  padding: 10px 30px;
+  justify-content: space-between;
+}
+
+.album-container__text {
+  margin-top: 0px;
+  margin-bottom: 8px;
+}
+
+.remove-album-button {
+  background-color: var(--red);
+  padding: 8px;
+  color: white;
+  border-radius: 8px;
+  border: none;
 }
