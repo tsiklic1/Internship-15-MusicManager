@@ -114,6 +114,30 @@ body {
   border: none;
 }
 
+.filter-wrapper {
+  margin-bottom: 30px;
+}
+
+.filter-wrapper__title {
+  color: white;
+}
+
 .filter-input {
   display: block;
+  margin-bottom: 5px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  color: white;
+  background-color: var(--blue);
+}
+
+.genre-filter-button {
+  background-color: var(--blue);
+  border: none;
+  margin-right: 5px;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 2px;
+  color: white;
 }
